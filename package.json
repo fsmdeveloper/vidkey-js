@@ -4,7 +4,7 @@
   "description": "A vidsrc key ectracttion tool!",
   "main": "index.mjs",
   "scripts": {
-    "getkeys": "node index.mjs"
+    "start": "node index.mjs"
   },
   "keywords": [],
   "author": "Inside4ndoid Studios [massive credit to achraf2003]",
