@@ -88,6 +88,7 @@ async function run() {
     assert(keys.length == 2, "Invalid array length!");
 
     console.info("Success!");
+    console.log(JSON.stringify(keys));
     await writeFile("keys.json", JSON.stringify(keys), "utf8");
   } else {
     console.error("FAIL!");
