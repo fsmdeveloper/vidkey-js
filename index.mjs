@@ -45,12 +45,33 @@ async function getDeobfuscatedScript() {
     });
 
     deobfuscatedScript = result.code;
+
+    const result2 = await webcrack(deobfuscatedScript, {
+      jsx: true,
+      unpack: true,
+      unminify: true,
+      deobfuscate: true,
+      mangle: false,
+    });
+
+    deobfuscatedScript = result2.code;
+
+    const result3 = await webcrack(deobfuscatedScript, {
+      jsx: true,
+      unpack: true,
+      unminify: true,
+      deobfuscate: true,
+      mangle: false,
+    });
+
+    deobfuscatedScript = result3.code;
+
     deobfuscatedScript = await deobfuscationChain(deobfuscatedScript, [
       webcrackStep,
       synchronyStep,
     ]);
 
-    // console.log(deobfuscatedScript);
+    console.log(deobfuscatedScript);
 
     if (checkDeobfs(deobfuscatedScript)) {
       return deobfuscatedScript;
@@ -88,7 +109,6 @@ async function run() {
     assert(keys.length == 2, "Invalid array length!");
 
     console.info("Success!");
-    console.log(JSON.stringify(keys));
     await writeFile("keys.json", JSON.stringify(keys), "utf8");
   } else {
     console.error("FAIL!");

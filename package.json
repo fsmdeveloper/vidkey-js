@@ -1,7 +1,7 @@
 {
   "name": "vidsrc-keys",
   "version": "1.0.0",
-  "description": "A vidsrc key ectracttion tool!",
+  "description": "A vidsrc key extraction tool!",
   "main": "index.mjs",
   "scripts": {
     "start": "node index.mjs"
