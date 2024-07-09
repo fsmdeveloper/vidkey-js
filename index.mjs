@@ -107,7 +107,7 @@ async function run() {
     const end = start.substring(0, start.indexOf(".replace"));
     const keys = Array.from(end.matchAll(/'(\w+)'/g), (x) => x[1]);
     assert(keys.length == 2, "Invalid array length!");
-
+    console.log(keys);
     console.info("Success!");
     await writeFile("keys.json", JSON.stringify(keys), "utf8");
   } else {
